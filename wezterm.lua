@@ -1,0 +1,32 @@
+local wezterm = require 'wezterm'
+
+-- Detecção de modo escuro/claro do sistema (opcional)
+local is_dark = wezterm.gui.get_appearance():find("Dark")
+
+-- Tema Rosé Pine
+local theme = wezterm.plugin.require('https://github.com/neapsix/wezterm').main
+
+return {
+  font = wezterm.font("BlexMono Nerd Font Mono", { weight = "Regular" }),
+  font_size = 13.0,
+  colors = theme.colors(),
+  window_frame = theme.window_frame(),   -- needed only if using fancy tab bar
+
+  hide_tab_bar_if_only_one_tab = true,
+  use_fancy_tab_bar = false,
+
+  enable_scroll_bar = false,
+  window_close_confirmation = "NeverPrompt",
+
+  window_background_opacity = 1,
+  macos_window_background_blur = 0,
+
+  window_padding = {
+    left = 0,
+    right = 0,
+    top = 0,
+    bottom = 0,
+  },
+
+  default_cursor_style = "SteadyBlock",
+}
