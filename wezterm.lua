@@ -8,6 +8,7 @@ local core_theme = wezterm.plugin.require('https://github.com/neapsix/wezterm')
 
 local theme = is_dark and core_theme.main or core_theme.dawn
 
+
 return {
   font = wezterm.font("BlexMono Nerd Font Mono", { weight = "Regular" }),
   font_size = 15.0,
@@ -16,6 +17,7 @@ return {
 
   hide_tab_bar_if_only_one_tab = true,
   use_fancy_tab_bar = false,
+  front_end = "OpenGL",
 
   enable_scroll_bar = false,
   window_close_confirmation = "NeverPrompt",
@@ -31,4 +33,7 @@ return {
   },
 
   default_cursor_style = "SteadyBlock",
+
+  freetype_load_target = "HorizontalLcd",
+  freetype_render_target = "HorizontalLcd",
 }
