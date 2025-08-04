@@ -4,13 +4,15 @@ local wezterm = require 'wezterm'
 local is_dark = wezterm.gui.get_appearance():find("Dark")
 
 -- Tema Rosé Pine
-local theme = wezterm.plugin.require('https://github.com/neapsix/wezterm').main
+local core_theme = wezterm.plugin.require('https://github.com/neapsix/wezterm')
+
+local theme = is_dark and core_theme.main or core_theme.dawn
 
 return {
   font = wezterm.font("BlexMono Nerd Font Mono", { weight = "Regular" }),
   font_size = 13.0,
   colors = theme.colors(),
-  window_frame = theme.window_frame(),   -- needed only if using fancy tab bar
+  window_frame = theme.window_frame(), -- needed only if using fancy tab bar
 
   hide_tab_bar_if_only_one_tab = true,
   use_fancy_tab_bar = false,
