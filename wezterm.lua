@@ -10,8 +10,8 @@ local theme = is_dark and core_theme.main or core_theme.dawn
 
 
 return {
-  font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Regular" }),
-  font_size = 13.0,
+  font = wezterm.font("FiraCode Nerd Font", { weight = "Regular" }),
+  font_size = 15.0,
   colors = theme.colors(),
   window_frame = theme.window_frame(), -- needed only if using fancy tab bar
 
