@@ -17,7 +17,7 @@ return {
 
   hide_tab_bar_if_only_one_tab = true,
   use_fancy_tab_bar = false,
-  front_end = "OpenGL",
+  front_end = "WebGpu",
 
   enable_scroll_bar = false,
   window_close_confirmation = "NeverPrompt",
@@ -35,5 +35,7 @@ return {
   default_cursor_style = "SteadyBlock",
 
   freetype_load_target = "HorizontalLcd",
+  freetype_load_flags = "NO_HINTING",
   freetype_render_target = "HorizontalLcd",
+  warn_about_missing_glyphs = false,
 }
