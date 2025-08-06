@@ -10,7 +10,7 @@ local theme = is_dark and core_theme.main or core_theme.dawn
 
 
 return {
-  font = wezterm.font("FiraCode Nerd Font Mono", { weight = "Regular" }),
+  font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Regular" }),
   font_size = 15.0,
   colors = theme.colors(),
   window_frame = theme.window_frame(), -- needed only if using fancy tab bar
@@ -33,9 +33,5 @@ return {
   },
 
   default_cursor_style = "SteadyBlock",
-
-  freetype_load_target = "HorizontalLcd",
-  freetype_load_flags = "NO_HINTING",
-  freetype_render_target = "HorizontalLcd",
   warn_about_missing_glyphs = false,
 }
