@@ -9,7 +9,7 @@ local core_theme = wezterm.plugin.require('https://github.com/neapsix/wezterm')
 local theme = is_dark and core_theme.main or core_theme.dawn
 
 
-return {
+local config = {
   font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Regular" }),
   font_size = 15.0,
   colors = theme.colors(),
@@ -35,3 +35,9 @@ return {
   default_cursor_style = "SteadyBlock",
   warn_about_missing_glyphs = false,
 }
+
+if string.find(wezterm.target_triple, "windows") then
+  config.default_prog = { "C:\\Program Files\\PowerShell\\7\\pwsh.exe" }
+end
+
+return config
