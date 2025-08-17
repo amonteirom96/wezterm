@@ -1,19 +1,54 @@
 local wezterm = require 'wezterm'
 
--- Detecção de modo escuro/claro do sistema (opcional)
+-- Detecta se o sistema está em modo escuro ou claro
 local is_dark = wezterm.gui.get_appearance():find("Dark")
 
--- Tema Rosé Pine
-local core_theme = wezterm.plugin.require('https://github.com/neapsix/wezterm')
+-- Tema claro
+local light_theme = {
+  foreground = "#16181a",
+  background = "#ffffff",
 
-local theme = is_dark and core_theme.main or core_theme.dawn
+  cursor_bg = "#16181a",
+  cursor_fg = "#ffffff",
+  cursor_border = "#16181a",
 
+  selection_fg = "#16181a",
+  selection_bg = "#acacac",
 
-local config = {
+  scrollbar_thumb = "#ffffff",
+  split = "#ffffff",
+
+  ansi = { "#ffffff", "#d11500", "#008b0c", "#997b00", "#0057d1", "#a018ff", "#008c99", "#16181a" },
+  brights = { "#acacac", "#d11500", "#008b0c", "#997b00", "#0057d1", "#a018ff", "#008c99", "#16181a" },
+  indexed = { [16] = "#d17c00", [17] = "#d11500" },
+}
+
+-- Tema escuro
+local dark_theme = {
+  foreground = "#ffffff",
+  background = "#16181a",
+
+  cursor_bg = "#ffffff",
+  cursor_fg = "#16181a",
+  cursor_border = "#ffffff",
+
+  selection_fg = "#ffffff",
+  selection_bg = "#3c4048",
+
+  scrollbar_thumb = "#16181a",
+  split = "#16181a",
+
+  ansi = { "#16181a", "#ff6e5e", "#5eff6c", "#f1ff5e", "#5ea1ff", "#bd5eff", "#5ef1ff", "#ffffff" },
+  brights = { "#3c4048", "#ff6e5e", "#5eff6c", "#f1ff5e", "#5ea1ff", "#bd5eff", "#5ef1ff", "#ffffff" },
+  indexed = { [16] = "#ffbd5e", [17] = "#ff6e5e" },
+}
+
+return {
   font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Regular" }),
   font_size = 15.0,
-  colors = theme.colors(),
-  window_frame = theme.window_frame(), -- needed only if using fancy tab bar
+
+  -- usa seu tema custom
+  colors = is_dark and dark_theme or light_theme,
 
   hide_tab_bar_if_only_one_tab = true,
   use_fancy_tab_bar = false,
@@ -35,9 +70,3 @@ local config = {
   default_cursor_style = "SteadyBlock",
   warn_about_missing_glyphs = false,
 }
-
-if string.find(wezterm.target_triple, "windows") then
-  config.default_prog = { "C:\\Program Files\\PowerShell\\7\\pwsh.exe" }
-end
-
-return config
