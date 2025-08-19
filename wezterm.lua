@@ -6,7 +6,7 @@ local is_dark = wezterm.gui.get_appearance():find("Dark")
 -- Tema Rosé Pine
 local core_theme = wezterm.plugin.require('https://github.com/neapsix/wezterm')
 
-local theme = is_dark and core_theme.main or core_theme.dawn
+local theme = is_dark and core_theme.moon or core_theme.dawn
 
 
 local config = {
