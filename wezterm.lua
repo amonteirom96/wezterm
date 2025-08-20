@@ -80,7 +80,7 @@ local light_theme = {
 
 local config = {
 	font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Regular" }),
-	font_size = 15.0,
+	font_size = 14.0,
 	colors = is_dark and dark_theme or light_theme,
 	-- window_frame = theme.window_frame(), -- needed only if using fancy tab bar
 
