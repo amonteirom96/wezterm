@@ -9,73 +9,141 @@ local is_dark = wezterm.gui.get_appearance():find("Dark")
 -- local theme = is_dark and core_theme.moon or core_theme.dawn
 
 local dark_theme = {
-	foreground = "#d4d4d4",
-	background = "#1f1f1f",
-	cursor_bg = "#d4d4d4",
-	cursor_fg = "1f1f1f",
-	cursor_border = "#d4d4d4",
-	selection_fg = "#1f1f1f",
-	selection_bg = "#dcdcaa",
-	scrollbar_thumb = "#ffffff",
-	split = "#ffffff",
+	foreground = "#abb2bf",
+	background = "#282c34",
+	cursor_bg = "#d55fde",
+	cursor_fg = "#282c34",
+	selection_bg = "#d55fde",
+	selection_fg = "#abb2bf",
+
 	ansi = {
-		"#1f1f1f",
-		"#f44747",
-		"#608b4e",
-		"#dcdcaa",
-		"#569cd6",
-		"#c678dd",
-		"#56b6c2",
-		"#d4d4d4",
+		"#282c34",
+		"#ef596f",
+		"#89ca78",
+		"#e5c07b",
+		"#61afef",
+		"#d55fde",
+		"#2bbac5",
+		"#abb2bf",
 	},
+
 	brights = {
-		"#808080",
-		"#f44747",
-		"#608b4e",
-		"#dcdcaa",
-		"#569cd6",
-		"#c678dd",
-		"#56b6c2",
-		"#d4d4d4",
+		"#5c6370",
+		"#f38897",
+		"#a9d89d",
+		"#edd4a6",
+		"#8fc6f4",
+		"#e089e7",
+		"#4bced8",
+		"#c8cdd5",
 	},
-	indexed = { [16] = "#d17c00", [17] = "#d11500" },
+
+	tab_bar = {
+		background = "#282c34",
+		inactive_tab_edge = "#282c34",
+
+		active_tab = {
+			fg_color = "#d55fde",
+			bg_color = "#282c34",
+			intensity = "Bold",
+		},
+
+		inactive_tab = {
+			fg_color = "#5c6370",
+			bg_color = "#282c34",
+			intensity = "Bold",
+		},
+
+		inactive_tab_hover = {
+			fg_color = "#d55fde",
+			bg_color = "#282c34",
+		},
+
+		new_tab = {
+			fg_color = "#d55fde",
+			bg_color = "#282c34",
+		},
+
+		new_tab_hover = {
+			fg_color = "#282c34",
+			bg_color = "#d55fde",
+		},
+	},
+
+	indexed = {
+		[59] = "#5c6370",
+		[100] = "#e2be7d",
+		[214] = "#d19a66",
+	},
 }
 
 local light_theme = {
-	foreground = "#000000",
-	background = "#ffffff",
-
-	cursor_bg = "#000000",
-	cursor_fg = "#ffffff",
-	cursor_border = "#000000",
-
-	selection_fg = "#ffffff",
-	selection_bg = "#d7ba7d",
-
-	scrollbar_thumb = "#16181a",
-	split = "#16181a",
+	foreground = "#6a6a6a",
+	background = "#fafafa",
+	cursor_bg = "#9a77cf",
+	cursor_fg = "#fafafa",
+	selection_bg = "#9a77cf",
+	selection_fg = "#6a6a6a",
 
 	ansi = {
-    '#ffffff',
-    '#c72e0f',
-    '#008000',
-    '#795e25',
-    '#007acc',
-    '#af00db',
-    '#56b6c2',
-    '#000000'
+		"#6a6a6a",
+		"#e05661",
+		"#1da912",
+		"#eea825",
+		"#118dc3",
+		"#9a77cf",
+		"#56b6c2",
+		"#fafafa",
 	},
+
 	brights = {
-    '#808080',
-    '#c72e0f',
-    '#008000',
-    '#795e25',
-    '#007acc',
-    '#af00db',
-    '#56b6c2',
-    '#000000'
+		"#bebebe",
+		"#e88189",
+		"#25d717",
+		"#f2bb54",
+		"#1caceb",
+		"#b69ddc",
+		"#7bc6d0",
+		"#ffffff",
 	},
-	indexed = { [16] = "#ffbd5e", [17] = "#ff6e5e" },
+
+	tab_bar = {
+		background = "#fafafa",
+		inactive_tab_edge = "#fafafa",
+
+		active_tab = {
+			fg_color = "#9a77cf",
+			bg_color = "#fafafa",
+			intensity = "Bold",
+		},
+
+		inactive_tab = {
+			fg_color = "#bebebe",
+			bg_color = "#fafafa",
+			intensity = "Bold",
+		},
+
+		inactive_tab_hover = {
+			fg_color = "#9a77cf",
+			bg_color = "#fafafa",
+		},
+
+		new_tab = {
+			fg_color = "#9a77cf",
+			bg_color = "#fafafa",
+		},
+
+		new_tab_hover = {
+			fg_color = "#fafafa",
+			bg_color = "#9a77cf",
+		},
+	},
+
+	indexed = {
+		[59] = "#bebebe",
+		[100] = "#e2be7d",
+		[214] = "#ee9025",
+	},
 }
 
 local config = {
