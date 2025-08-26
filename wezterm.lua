@@ -9,73 +9,23 @@ local is_dark = wezterm.gui.get_appearance():find("Dark")
 -- local theme = is_dark and core_theme.moon or core_theme.dawn
 
 local dark_theme = {
-	foreground = "#abb2bf",
-	background = "#282c34",
-	cursor_bg = "#d55fde",
-	cursor_fg = "#282c34",
-	selection_bg = "#d55fde",
-	selection_fg = "#abb2bf",
+		foreground = "#dcd7ba",
+		background = "#1f1f28",
 
-	ansi = {
-		"#282c34",
-		"#ef596f",
-		"#89ca78",
-		"#e5c07b",
-		"#61afef",
-		"#d55fde",
-		"#2bbac5",
-		"#abb2bf",
-	},
+		cursor_bg = "#c8c093",
+		cursor_fg = "#c8c093",
+		cursor_border = "#c8c093",
 
-	brights = {
-		"#5c6370",
-		"#f38897",
-		"#a9d89d",
-		"#edd4a6",
-		"#8fc6f4",
-		"#e089e7",
-		"#4bced8",
-		"#c8cdd5",
-	},
+		selection_fg = "#c8c093",
+		selection_bg = "#2d4f67",
 
-	tab_bar = {
-		background = "#282c34",
-		inactive_tab_edge = "#282c34",
+		scrollbar_thumb = "#16161d",
+		split = "#16161d",
 
-		active_tab = {
-			fg_color = "#d55fde",
-			bg_color = "#282c34",
-			intensity = "Bold",
-		},
-
-		inactive_tab = {
-			fg_color = "#5c6370",
-			bg_color = "#282c34",
-			intensity = "Bold",
-		},
-
-		inactive_tab_hover = {
-			fg_color = "#d55fde",
-			bg_color = "#282c34",
-		},
-
-		new_tab = {
-			fg_color = "#d55fde",
-			bg_color = "#282c34",
-		},
-
-		new_tab_hover = {
-			fg_color = "#282c34",
-			bg_color = "#d55fde",
-		},
-	},
-
-	indexed = {
-		[59] = "#5c6370",
-		[100] = "#e2be7d",
-		[214] = "#d19a66",
-	},
-}
+		ansi = { "#090618", "#c34043", "#76946a", "#c0a36e", "#7e9cd8", "#957fb8", "#6a9589", "#c8c093" },
+		brights = { "#727169", "#e82424", "#98bb6c", "#e6c384", "#7fb4ca", "#938aa9", "#7aa89f", "#dcd7ba" },
+		indexed = { [16] = "#ffa066", [17] = "#ff5d62" },
+	}
 
 local light_theme = {
 	foreground = "#6a6a6a",
@@ -149,7 +99,8 @@ local light_theme = {
 local config = {
 	font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Regular" }),
 	font_size = 14.0,
-	colors = is_dark and dark_theme or light_theme,
+	-- colors = is_dark and dark_theme or light_theme,
+	colors = dark_theme,
 	-- window_frame = theme.window_frame(), -- needed only if using fancy tab bar
 
 	hide_tab_bar_if_only_one_tab = true,
